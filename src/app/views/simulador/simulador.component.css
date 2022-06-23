@@ -1,0 +1,46 @@
+td {
+    padding-right: 28px;
+}
+
+.campo-width {
+    width: 93px;
+}
+
+.campo-width2 {
+    width: 100px;
+}
+
+.campo-width3 {
+    width: 40px;
+}
+
+button {
+    margin: 010px 10px 0;
+    color: #1976d2;
+    border: 2px solid;
+    transition: 0.25s;
+}
+
+button:hover,
+button:focus {
+    color: #1976d2;
+    font-weight: bold;
+    border-color: #FBFBFB;
+    box-shadow: 0 0 0 10px #1976d2;
+    animation: a 2s;
+}
+
+h4 {
+    margin-right: 550px;
+    font-size: 30px;
+    color: #0f996b;
+}
+
+h3 {
+    margin-top: -40px;
+}
+
+.tamImg {
+    margin-top: -5px;
+    margin-right: 580px;
+}

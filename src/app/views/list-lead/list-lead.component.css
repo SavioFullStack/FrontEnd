@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background: #FFF
+}
+
+tr:nth-child(odd) {
+    background: #EEE
+}
+
+.bt1 {
+    margin-left: 670px;
+    margin-top: -30px;
+}
+
+.bt2 {
+    margin-left: 750px;
+    margin-top: -29.38px;
+}
+
+.edit {
+    margin-right: 05px;
+}
+
+i.edit {
+    color: #d9cd26
+}
+
+i.delete {
+    color: #e35e
+}

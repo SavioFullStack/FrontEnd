@@ -1,0 +1,180 @@
+<div layout="column" layout-fill>
+    <div align="center" layout="row" layout-align="center center">
+
+        <mat-card class="info-card mat-elevation-z8" flex="80" style="margin-top: 20px;width: 720px;height: 500px;;">
+
+            <mat-card-title>Financial Simulation</mat-card-title>
+            <h4>
+                <mat-label>Positivo</mat-label>
+            </h4>
+            <mat-card-subtitle> </mat-card-subtitle>
+
+            <mat-card-content fxLayout="column" fxLayoutAlign="stretch">
+
+                <form fxLayout="column" fxLayoutAlign="start stretch">
+
+                    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between  start">
+
+                        <td>
+                            <mat-form-field fxFlex="20">
+                                <mat-select id="c1" placeholder="Pimeiro Comprador *">
+                                    <mat-option value="0">Ana Lucia </mat-option>
+                                    <mat-option value="1">Marcelo Tiririca</mat-option>
+                                    <mat-option value="3">Sávio Costa</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                        </td>
+
+                        <td>
+                            <mat-form-field fxFlex="20">
+                                <mat-select placeholder="Segundo Comprador">
+                                    <mat-option value="Option 1">Ana Lucia </mat-option>
+                                    <mat-option value="Option 1">Marcelo Tiririca</mat-option>
+                                    <mat-option value="Option 2">Sávio Costa</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                        </td>
+                        <td>
+                            <mat-form-field fxFlex="20">
+                                <mat-select placeholder="Terceiro Comprador">
+                                    <mat-option value="Option 1">Ana Lucia </mat-option>
+                                    <mat-option value="Option 1">Marcelo Tiririca</mat-option>
+                                    <mat-option value="Option 2">Sávio Costa</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                        </td>
+
+                    </div>
+
+
+
+
+                    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between  start">
+                        <td>
+                            <mat-form-field class="campo-width" fxFlex="45">
+                                <input matInput disabled maxlength="11" matInput type="text" class="form-control" value="" placeholder="Renda Bruta">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="campo-width" fxFlex="45">
+                                <input matInput disabled maxlength="11" matInput type="text" class="form-control" value="" placeholder="F.G.T.S.">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="campo-width" fxFlex="45">
+                                <input matInput disabled maxlength="11" matInput type="text" class="form-control" value="" placeholder="Sinal">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="campo-width" fxFlex="45">
+                                <input matInput disabled maxlength="11" matInput type="text" class="form-control" value="" placeholder="Dt +Velho">
+                            </mat-form-field>
+                        </td>
+
+
+
+
+                    </div>
+
+                    <img class="tamImg" (click)="goToUrl()" src="/assets/img/cef.png" width="60" height="45" />
+
+
+
+                    <div fxFlex="10">
+                        <h3>Dados necessários para simulaçao</h3>
+                    </div>
+
+                    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between  start">
+
+                        <td>
+                            <mat-form-field class="campo-width" fxFlex="45">
+                                <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="C.P.F.">
+                            </mat-form-field>
+                        </td>
+
+                        <td>
+                            <mat-form-field fxFlex="35">
+                                <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="Empreendimento">
+                            </mat-form-field>
+                        </td>
+
+                        <td>
+                            <mat-form-field class="campo-width" fxFlex="35">
+                                <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="Fluxo">
+                            </mat-form-field>
+                        </td>
+
+
+
+                    </div>
+
+
+
+
+
+                    <td>
+                        <mat-form-field fxFlex="35">
+                            <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="Vlr Avaliação">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field fxFlex="35">
+                            <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="Vlr Venda">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field fxFlex="35">
+                            <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="Financiamento Obtido">
+                        </mat-form-field>
+                    </td>
+
+                    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between  start">
+                        <td>
+                            <mat-form-field class="campo-width2" fxFlex="35">
+                                <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="1º Parcela">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="campo-width2" fxFlex="35">
+                                <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="Última Parcela">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="campo-width2" fxFlex="35">
+                                <input maxlength="11" matInput type="text" class="form-control" value="" placeholder="Subsídio">
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="campo-width2" fxFlex="20">
+                                <mat-select placeholder="Amortizaçao">
+                                    <mat-option value="Option 1">SAC/TR</mat-option>
+                                    <mat-option value="Option 1">Price/TR</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                    </div>
+
+                    <div fxFlex="100" fxLayoutAlign="start">
+                        <button mat-button color="primary" type="submit">
+                            <mat-icon>done</mat-icon>Submit
+                          </button>
+                    </div>
+
+
+                </form>
+
+            </mat-card-content>
+
+        </mat-card>
+
+
+    </div>
+
+</div>

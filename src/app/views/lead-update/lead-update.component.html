@@ -1,0 +1,30 @@
+<div align="center" layout="row" layout-align="center center">
+    <mat-card class="info-card mat-elevation-z8" style="margin-top: 20px;width: 820px;height: 700;">
+        <mat-card-title>Update Lead Registration </mat-card-title>
+        <mat-card-content fxLayout="column" fxLayoutAlign="stretch">
+
+            <!--- Form -------------------------------------------->
+            <form method="post" (ngSubmit)="updateLead()" [formGroup]="frm">
+                <td>
+                    <!--- Nome do Comprador -------------------------------------------->
+                    <mat-form-field>
+
+                        <td>{{frm.name}}</td>
+                    </mat-form-field>
+
+
+                </td>
+
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+</div>
+<p>
+
+    <!--   {{"origeRenda = " + frm.get('origRenda')?.errors | json}} {{frm.get('origRenda')?.touched | json}} {{frm.get('origRenda')?.dirty | json}}
+-->
+    {{frm.value.indComp | json}} {{frm.value.contatoInd |json}}
+</p>

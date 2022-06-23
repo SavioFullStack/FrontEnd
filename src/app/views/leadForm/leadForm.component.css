@@ -1,0 +1,56 @@
+    body {
+        width: 100%;
+    }
+    
+    td {
+        padding-right: 48px;
+    }
+    
+    .campo-width {
+        width: 93px;
+    }
+    
+    .campo-width2 {
+        width: 100px;
+    }
+    
+    .campo-width3 {
+        width: 190px;
+    }
+    
+    .campo-number {
+        align-items: flex-end;
+        width: 120px;
+    }
+    
+    button {
+        margin: 030px 20px 0;
+        color: #067bf0;
+        border: 2px solid;
+        transition: 0.25s;
+    }
+    
+    button:hover,
+    button:focus {
+        color: #1976d2;
+        font-weight: bold;
+        border-color: #FBFBFB;
+        box-shadow: 0 0 0 10px #1976d2;
+        animation: a 2s;
+    }
+    
+    .errors {
+        color: red;
+    }
+    
+    select {
+        background-color: #FFF;
+        color: #000;
+        padding: 3px;
+        border-width: 1px;
+        border-color: rgb(230, 224, 224);
+    }
+    
+    h4 {
+        font-weight: bold;
+    }

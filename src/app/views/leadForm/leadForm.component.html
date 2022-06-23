@@ -1,0 +1,248 @@
+<div align="center" layout="row" layout-align="center center">
+    <mat-card class="info-card mat-elevation-z8" style="margin-top: 20px;width: 820px;height: 700;">
+        <mat-card-title>New Lead Registration </mat-card-title>
+        <mat-card-content fxLayout="column" fxLayoutAlign="stretch">
+
+            <!--- Form -------------------------------------------->
+            <form method="post" (ngSubmit)="createrLead()" [formGroup]="frm">
+
+
+
+                <td>
+                    <!--- Nome do Comprador -------------------------------------------->
+                    <input class="w3-input" type="text" placeholder="*Nome Comprador" formControlName='nmComp'>
+                    <span class="errors" *ngIf="frm.get('nmComp')?.errors 
+                            && (frm.get('nmComp')?.touched || frm.get('nmComp')?.dirty)">
+                            {{ errNom }}
+                        </span>
+
+                </td>
+
+                <td>
+                    <!--- Cell do Comprador -------------------------------------------->
+                    <input class="w3-input" type="text" formControlName="celComp" placeholder="*Contato" mask="(d0)0000-00000">
+                    <span class="errors" *ngIf="frm.get('celComp')?.errors 
+                        && (frm.get('celComp')?.touched || frm.get('celComp')?.dirty)">
+                        {{ errCel }}
+                        </span>
+                </td>
+
+                <td>
+                    <!--- Data Nacimento do Comprador -------------------------------------------->
+                    <input class="w3-input" type="date" formControlName="dtNscComp" placeholder="Data Nascimento">
+                    <span class="errors" *ngIf="frm.get('dtNscComp')?.errors 
+                        && (frm.get('dtNscComp')?.touched || frm.get('dtNscComp')?.dirty)">
+                        {{ errDtn }}
+                     </span>
+                </td>
+
+
+                <h4></h4>
+                <div>
+                    <h4>Customer Origin </h4>
+                </div>
+
+                <!-- Checkbox Indicação -------------------------------------------->
+                <div>
+                    <td>
+                        <section>
+                            <mat-checkbox name="indComp" id="myChk" formControlName="indComp"> Se o Lead não foi de origem de seus contatos, marque esta opção!</mat-checkbox>
+                        </section>
+                    </td>
+
+                </div>
+                <!-- nome da Indicação -------------------------------------------->
+                <td>
+                    <span class="errors" *ngIf="frm.value.indComp">                  
+                        <input class="w3-input" type="text" [disabled]="isDisabled" formControlName="nmIndic" placeholder="*Indicado Por"/>
+                        <span class="errors" *ngIf="frm.get('nmIndic')?.errors 
+                            && (frm.get('nmIndic')?.touched || frm.get('nmIndic')?.dirty)">
+                            {{ errIndNm }}
+                        </span>
+
+                    </span>
+
+                </td>
+                <!-- contato Indicação -------------------------------------------->
+                <td>
+                    <span class="errors" *ngIf="frm.value.indComp"> 
+                        <input class=" w3-input " type="text " formControlName="contatoInd" placeholder="*Contato" [disabled]="isDisabled" mask="(d0)0000-00000">
+                        <span class="errors" *ngIf="frm.get('contatoInd')?.errors 
+                            && (frm.get('contatoInd')?.touched || frm.get('contatoInd')?.dirty)">
+                            {{ errIndCel }}
+                        </span>
+                    </span>
+                </td>
+                <h4></h4>
+
+                <div>
+                    <h4>Income and Own Resources</h4>
+                </div>
+
+                <!-- Checkbox possui escritura imovel -------------------------------------------->
+                <div>
+                    <td>
+                        <section>
+                            <mat-checkbox name="escrituraCPF " class="example-margin" formControlName="escrituraCPF">Escritura de imóvel registado no meu C.P.F. nesta cidade!</mat-checkbox>
+                        </section>
+                    </td>
+
+                    <!--- Combobox Option Origem de Renda -------------------------------------------->
+
+                    <td class="campo-width3">
+                        <label>Origem Renda</label>
+                        <select formControlName="origRenda">
+                                <option *ngFor="let origem of origens" [value]="origem">
+                                    {{origem}}
+                                </option>
+                            </select>
+                    </td>
+
+                    <!--- <p>You selected2: {{{selected}}}</p>----->
+                </div>
+
+                <h4></h4>
+
+                <!--- Renda Bruta -------------------------------------------->
+                <div>
+                    <td>
+                        <input class="w3-input" type="text" formControlName="rendaBruta" currencyMask [options]="{ prefix: 'R$', thousands: '.', decimal: ','}">
+                        <span>Renda Bruta</span>
+                    </td>
+
+                    <!--- Saldo FGTS -------------------------------------------->
+                    <td>
+                        <input class="w3-input" type="text " currencyMask formControlName="saldoFGTS" [options]="{ prefix: 'R$', thousands: '.', decimal: ','}">
+                        <span>Saldo FGTS Atual</span>
+                    </td>
+
+                    <!--- Sinal - Entrada -------------------------------------------->
+                    <td>
+                        <input class="w3-input" placeholder="Sinal" currencyMask formControlName="vrSinal" [options]="{ prefix: 'R$', thousands: '.', decimal: ','}">
+                        <span>Sinal/Ato</span>
+                    </td>
+                </div>
+
+                <h4></h4>
+
+                <div>
+                    <h4>Customer Profile</h4>
+                </div>
+
+                <div>
+
+                    <!--- Checkbox  Declaração IRF atuailzadas -------------------------------------------->
+                    <td>
+                        <mat-checkbox name="irAtualizado " class="example-margin" formControlName="irAtualizado">IRPF Declarado!</mat-checkbox>
+                    </td>
+
+                    <td>
+                        <mat-checkbox name="myChkFin" id="myChkFin" formControlName="fincAtivo">
+                            Está pagando financiamento Veículo, Emprestimos, Imóveis...!</mat-checkbox>
+                    </td>
+                </div>
+
+                <!--- Quantidade de Parcelas -------------------------------------------->
+                <td>
+                    <span *ngIf="frm.value.fincAtivo "> 
+                        <input type="number" class="w3-input" name="qtdParcelas"  formControlName="qtdParcelas"/>
+                        <span>Qtd parcelas</span>
+                    </span>
+                </td>
+
+                <!--- Valor da Parcela -------------------------------------------->
+                <td>
+                    <span *ngIf="frm.value.fincAtivo "> 
+                            <input type="text" class="w3-input"  currencyMask formControlName="vlrParcela" [options]="{ prefix: 'R$', thousands: '.', decimal: ','}"/>
+                            <span>Valor da Parcela</span>
+                    </span>
+                </td>
+
+                <!--- Total quantidades x valor parcela -------------------------------------------->
+
+                <td>
+                    <span *ngIf="frm.value.fincAtivo"> 
+                    
+                        <label type="text" class="w3-input"name="total" currencyMask [options]="{ prefix: 'R$', thousands: '.', decimal: ','}" > 
+                            {{"R$"+ calcularSoma() + ",00"}}
+                        </label>
+                       
+                        <span>{{ campoSomaFin }}</span>
+                    </span>
+                </td>
+
+
+
+                <div>
+                    <h4></h4>
+                    <h4></h4>
+                    <h4></h4>
+                    <h4></h4>
+
+                    <!--- Option  Tipo de Imóvel comprador procura -------------------------------------------->
+                    <td class="campo-width3">
+                        <label>Tipo Imóvel</label>
+                        <select formControlName="tpImovel">
+                                <option *ngFor="let tpImovel of tpImoveis" [value]="tpImovel">
+                                    {{tpImovel}}
+                                </option>
+                            </select>
+
+                    </td>
+
+                    <!--- Option  Situação do Imóvel comprador procura -------------------------------------------->
+                    <td class="campo-width3">
+                        <label>Situação Imóvel</label>
+                        <select formControlName="sitImovel">
+                            <option *ngFor="let stImovel of stImoveis" [value]="stImovel">
+                                {{stImovel}}
+                            </option>
+                        </select>
+
+                    </td>
+
+                    <!--- Localização do Imóvel comprador procura -------------------------------------------->
+
+                    <td class="campo-width3">
+                        <label>Região</label>
+                        <select formControlName="regImovel">
+                            <option *ngFor="let local of loc" [value]="local">
+                                {{local}}
+                            </option>
+                        </select>
+
+                    </td>
+
+                    <div>
+
+
+                    </div>
+
+                    <h4></h4>
+                    <h4></h4>
+                    <h4></h4>
+
+                    <span></span>
+
+
+                </div>
+
+                <h4></h4>
+
+                <!--- Submeter Formulario - chama serviço Server -------------------------------------------->
+                <div>
+                    <button type="submit ">Salvar</button>
+                </div>
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+</div>
+<p>
+
+    <!--   {{"origeRenda = " + frm.get('origRenda')?.errors | json}} {{frm.get('origRenda')?.touched | json}} {{frm.get('origRenda')?.dirty | json}}
+-->
+    {{frm.value.indComp | json}} {{frm.value.contatoInd |json}}
+</p>

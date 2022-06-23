@@ -1,0 +1,38 @@
+table {
+    width: 100%;
+}
+
+.full-width-table {
+    width: 50%;
+}
+
+tr:nth-child(even) {
+    background: #FFF
+}
+
+tr:nth-child(odd) {
+    background: #EEE
+}
+
+.headPesq {
+    width: 100%;
+}
+
+button {
+    width: 9%;
+    margin: 5px 5px 8px 5px;
+}
+
+.edit {
+    margin-right: 10px;
+}
+
+.edit>i {
+    color: #0317ed;
+    font-size: 16px;
+}
+
+.delete>i {
+    color: #e35e;
+    font-size: 16px;
+}
